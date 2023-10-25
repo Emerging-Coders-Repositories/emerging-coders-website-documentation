@@ -1,31 +1,59 @@
-# Website Tech Stack
+## Tech Stack Overview
 
-```js filename="demo.js" {3} copy
-let a = 1;
+In developing this project, we wanted to choose a tech stack that was robust enough to support everything that we wanted to build and include in our site while also being easy to use and learn. We also wanted to ensure that the tech stack we chose would be able to support the future growth of the site and that it would be easy to maintain and update.
 
-console.log(a);
-```
+### Next.js
 
-## Component
+[Next.js](https://nextjs.org/) is a React-based framework that enables functionality such as server-side rendering and generating static websites for React-based web applications. It is optimized for a better user experience and SEO performance.
 
-import { useState } from 'react'
+- **Usage**: 
+  - Server-side Rendering (SSR): Facilitates faster page load times by rendering pages on the server-side before they reach the client.
+  - Static Site Generation (SSG): Allows for the creation of static sites that can be easily deployed and scaled.
+  - API Routes: Simplifies the process of building APIs directly within the project.
+  
+- **Why Chosen**:
+  - Performance Optimization: Provides a faster browsing experience which is crucial for user engagement and SEO.
+  - Developer Efficiency: The built-in routing and page-based structure make it straightforward and efficient to build and scale applications.
+  - Community and Support: Boasts a strong community and extensive documentation which aids in troubleshooting and learning.
 
-{/* Import CSS modules */}
-import styles from '../components/counters.module.css'
+## React
 
-export const Counter = () => {
-  const [count, setCount] = useState(0);
-  return (
-    <div>
-      <button onClick={() => setCount(count + 1)} className={styles.counter}>Clicked {count} times</button>
-    </div>
-  );
-};
+[React](https://react.dev/) is a JavaScript library renowned for building interactive and dynamic user interfaces, especially in single-page applications. It's known for its component-based architecture which promotes reusability and ease of maintenance.
 
-<Counter/>
+### Usage:
+- **Component-Based Architecture**: Enables encapsulation and the composition of complex UIs from smaller, reusable components.
+- **State Management**: Provides robust state management to handle data changes efficiently within components.
+- **Virtual DOM**: Implements a Virtual DOM to optimize rendering and improve app performance.
 
-## External Component
+### Why Chosen:
+- **Performance**: The Virtual DOM and efficient diffing algorithm ensure high performance for complex applications.
+- **Maintainability**: The component-based structure promotes code reusability and easier maintainability.
+- **Community and Ecosystem**: Supported by a vast community and a rich ecosystem of libraries and tools, facilitating development and problem-solving.
 
-import Counters from '../components/counters'
+### Tailwind CSS
 
-<Counters />
+[Tailwind CSS](https://tailwindcss.com/) CSS is a utility-first CSS framework that allows developers to rapidly build custom designs by applying utility classes directly to HTML elements. 
+
+- **Usage**:
+  - Rapid Prototyping: Accelerates the development process by providing utility classes for styling.
+  - Customization: Offers extensive customization capabilities for creating a unique and brand-aligned design.
+  
+- **Why Chosen**:
+  - Efficiency: Significantly reduces the time required to write custom CSS.
+  - Maintainability: Promotes the use of reusable components, making the codebase easier to maintain and update.
+  - Responsiveness: Makes it simpler to create a responsive design with its utility classes.
+
+### Next.UI
+
+[Next.UI](https://nextui.org/) is a component library that provides a set of high-quality, customizable, and accessible UI components. (Note: As of my last training cut-off in September 2021, Next.UI might not be widely recognized. Ensure to verify the existence and the correct name of this library.)
+
+- **Usage**:
+  - UI Components: Supplies pre-built components that expedite the development of interactive user interfaces.
+  - Theming: Supports theming capabilities to ensure consistency in UI design across the application.
+  
+- **Why Chosen**:
+  - Quality: Offers high-quality, well-designed components that enhance the user experience.
+  - Consistency: Ensures a consistent look and feel across the application, promoting a professional appearance.
+  - Accessibility: Provides accessible components that cater to a wide range of users, including those with disabilities.
+
+In summary, the synergy of Next.js, Tailwind CSS, and Next.UI provides a robust foundation for building a performant, visually appealing, and user-friendly web application. This tech stack not only facilitates a fast development process but also ensures the application is scalable, maintainable, and accessible.
