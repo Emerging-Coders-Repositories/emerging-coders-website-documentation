@@ -1,0 +1,58 @@
+# Installing Github Command Line Tool
+
+Github CLI is a command line tool that allows you to interact with Github from the command line. It is a great tool for automating tasks and integrating with other tools. You can find more information about Github CLI [here](https://cli.github.com/). You don't need to install Github CLI to setup the project, but it is recommend that you do install as getting used to and comfortable with Github CLI is a great skill to have as a software engineer. 
+
+Here's a guide on how to set up and install GitHub CLI for your project on macOS, Windows, and Linux environments. The instructions are based on the latest methods and documentation for GitHub CLI:
+
+## Installing GitHub CLI
+
+### For macOS:
+
+1. **Homebrew**:
+   - Install: `brew install gh`
+   - Upgrade: `brew upgrade gh`
+   
+2. **MacPorts**:
+   - Install: `sudo port install gh`
+   - Upgrade: `sudo port selfupdate && sudo port upgrade gh`
+   
+3. **Conda**:
+   - Install: `conda install gh --channel conda-forge`
+   - Upgrade: `conda update gh --channel conda-forge`
+   
+4. **Others**:
+   - You can also use **Spack**, or download a binary from the [releases page](https://github.com/cli/cli/releases).
+
+### For Windows:
+
+1. **WinGet**:
+   - Install: `winget install --id GitHub.cli`
+   - Upgrade: `winget upgrade --id GitHub.cli`
+   
+2. **Scoop**:
+   - Install: `scoop install gh`
+   - Upgrade: `scoop update gh`
+   
+3. **Chocolatey**:
+   - Install: `choco install gh`
+   - Upgrade: `choco upgrade gh`
+   
+4. **Others**:
+   - You can use **Conda**, or download an MSI installer from the [releases page](https://github.com/cli/cli/releases).
+
+### For Linux & BSD:
+
+- GitHub CLI is available through:
+   - Official Debian and RPM repositories.
+   - Community-maintained repositories in various Linux distros.
+   - OS-agnostic package managers such as **Homebrew**, **Conda**, and **Spack**.
+   - Precompiled binaries from the [releases page](https://github.com/cli/cli/releases).
+
+For more detailed installation instructions for Linux, you can refer to the [Linux & BSD installation guide](https://github.com/cli/cli/blob/trunk/docs/install_linux.md) on GitHub.
+
+## Additional Information:
+- GitHub CLI is an open-source tool for using GitHub from your computer's command line, allowing you to work with pull requests, issues, and other GitHub concepts alongside git and your code.
+- GitHub CLI is available for repositories hosted on GitHub.com and GitHub Enterprise Server 2.20+.
+- For more detailed instructions or alternative installation methods, you may refer to the [GitHub CLI quickstart guide](https://docs.github.com/en/github-cli/github-cli/quickstart) or the [official GitHub repository for GitHub CLI](https://github.com/cli/cli).
+
+This guide should provide a structured way to set up GitHub CLI on different operating systems, which can be crucial for interacting with GitHub efficiently in your project's development environment.
