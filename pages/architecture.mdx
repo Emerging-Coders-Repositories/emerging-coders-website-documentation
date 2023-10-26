@@ -1,0 +1,14 @@
+## Project Directory Structure
+The project is structured as follows:
+- **Root Directory**: Contains configuration files like `.eslintrc.json`, `next.config.js`, `package.json`, and others.
+- **public**: This directory contains various images and other static assets (like the exec board pictures or flyers for our events).
+- **src/app**: This is the main directory where the application's components and pages are located.
+  - **Components**: Contains various React components used throughout the application.
+  - **Events, Opportunities, Additional-Resources, etc.**: These directories contain specific pages or sections of the website.
+
+
+## Flow of Data within the Application
+- The application primarily uses React components to render and manage its data.
+- For dynamic data, such as sending contact messages, the application interacts with external servers (as seen in the `ContactComponent`). Don't worry too much about this, we will be building out the server more in the future but the focus is on the front end currently. 
+- Components like `EventCard` and `ExecBoardCards` receive data as props and display them accordingly.
+- The application also uses animations and visibility checks to enhance user experience, as seen in the `FadeInAnimation` component.
