@@ -5,6 +5,7 @@ The project is structured as follows:
 - **src/app**: This is the main directory where the application's components and pages are located.
   - **Components**: Contains various React components used throughout the application.
   - **Events, Opportunities, Additional-Resources, etc.**: These directories contain specific pages or sections of the website.
+  - **Additional-Resources, Contact, Events, FAQ, etc.**: Because we are using the [App Router](https://nextjs.org/docs/app) from Next.JS 13, any of the files inside of the `app/` directory with a file `page.js` will be considered to be pages in the app. This is beneficial because we can use the same components for both the main page and the mobile menu and we don't have to rely on dependencies like `react-router-dom` for page navigation. **this is a very big concept and component of the app so please make sure you read the documentation on it.**
 
 
 ## Flow of Data within the Application

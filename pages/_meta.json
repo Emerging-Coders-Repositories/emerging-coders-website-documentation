@@ -2,12 +2,13 @@
   "index": "Introduction",
   "tech-stack": "Tech Stack",
   "setup": "Setup",
-  "advanced": "Advanced (A Folder)",
   "about": {
     "title": "About",
     "type": "page"
   },
-  
+  "architecture": "Architecture",
+  "components": "Components",
+  "ui": "UI",
   "contact": {
     "title": "Contact ↗",
     "type": "page",
