@@ -1,0 +1,95 @@
+# `LandingPageCover` Component Documentation
+
+The `LandingPageCover` component serves as the introductory section of the Emerging Coders' landing page. This component creates an animated particle background using `react-tsparticles` and overlays a text component, `LandingPageCoverText`, centered within the viewport. 
+
+## Component Structure
+
+```jsx
+import React from "react"; 
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
+import LandingPageCoverText from "../LandingPageCoverText/LandingPageCoverText";
+
+export default function LandingPageCover()  {
+
+    const particlesInit = async (main) => {
+        console.log(main);
+        await loadFull(main);
+    };
+
+    const particlesLoaded = (container) => {
+        console.log(container);
+    };
+
+    return (
+        <div class="relative h-screen">
+            <Particles
+                id="tsparticles"
+                init={particlesInit}
+                loaded={particlesLoaded}
+                options={...}
+            />
+            <div class="absolute inset-0 flex items-center justify-center">
+                <LandingPageCoverText />
+            </div>
+        </div>
+    );
+};
+```
+
+## Props
+
+This component does not accept any props.
+
+## Usage
+
+```jsx
+<LandingPageCover />
+```
+
+## Rendered UI
+
+- An animated particle background.
+- A centered text overlay via `LandingPageCoverText` component.
+
+## Behavior
+
+- Upon rendering, the `react-tsparticles` library is initialized and starts animating the particle background.
+- The `particlesInit` and `particlesLoaded` functions are provided as callbacks to `react-tsparticles` but currently log the parameters to the console.
+- The `LandingPageCoverText` component is overlaid on top of the particle background.
+
+## Styling
+
+- The component makes use of Tailwind CSS classes for styling:
+    - `relative` and `h-screen` for positioning and height of the container div.
+    - `absolute`, `inset-0`, `flex`, `items-center`, and `justify-center` for positioning and centering the text overlay.
+
+## Accessibility
+
+- No specific accessibility configurations are in place for this component. Ensure that `LandingPageCoverText` is accessible.
+
+## Dependencies
+
+- React
+- `react-tsparticles`
+- `tsparticles`
+- `LandingPageCoverText` component from `../LandingPageCoverText/LandingPageCoverText`.
+
+## Customization
+
+- Customize the appearance of the particle background by modifying the `options` prop of the `Particles` component.
+- Replace or customize the `LandingPageCoverText` component to alter the overlay text.
+
+## External Content
+
+- Particle background is rendered using `react-tsparticles`.
+
+## Intersection with Other Components
+
+- This component encapsulates the `LandingPageCoverText` component.
+
+## Cleanup
+
+- No specific cleanup is required as there are no side effects being managed outside of the `react-tsparticles` library.
+
+The `LandingPageCover` component creates a visually engaging introduction to the Emerging Coders community by combining an animated background with a descriptive text overlay. This composition sets the stage for visitors, drawing them into the rest of the content provided on the landing page.

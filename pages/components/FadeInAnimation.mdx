@@ -1,0 +1,65 @@
+# FadeInAnimation Component Documentation
+
+The `FadeInAnimation` component is designed to wrap around other elements and provides a fade-in animation when the wrapped elements come into the viewport.
+
+## Props
+
+- `delay` (string): A string representing the delay before the animation starts, e.g., "0.5s". This prop is optional.
+- `children` (React Node): The elements that the `FadeInAnimation` component wraps around.
+
+## State
+
+- `isShown` (boolean): A state variable that toggles to `true` when the wrapped elements intersect the viewport.
+
+## Rendered UI
+
+The `FadeInAnimation` component renders a `div` element that wraps around the `children` prop. The wrapper `div` has a class of `pop-in-section` and a conditional class of `is-show` which is added when the `isShown` state variable is `true`. The `transitionDelay` style is set based on the `delay` prop.
+
+## Usage
+
+```jsx
+import React from "react";
+import FadeInAnimation from "./FadeInAnimation";
+
+function App() {
+    return (
+        <FadeInAnimation delay="0.5s">
+            <div>Your content here</div>
+        </FadeInAnimation>
+    );
+}
+
+export default App;
+```
+
+## Behavior
+
+- The `FadeInAnimation` component uses the `IntersectionObserver` API to monitor the visibility of the `div` element that wraps around the `children` prop.
+- When the `div` element comes into the viewport (`isIntersecting` is `true`), the `isShown` state variable is set to `true`.
+- The `is-show` class is conditionally added to the `div` element based on the `isShown` state variable.
+- The `transitionDelay` style property of the `div` element is set based on the `delay` prop.
+- The `IntersectionObserver` instance stops observing the `div` element when the component is unmounted, to prevent memory leaks.
+
+## Styling
+
+The component relies on external CSS for the actual animation, using classes `pop-in-section` and `is-show`. The `transitionDelay` style is applied inline based on the `delay` prop.
+
+## Dependencies
+
+- React
+
+## Accessibility
+
+The `FadeInAnimation` component does not have specific accessibility features. It is advisable to ensure that the fade-in animation does not hinder the accessibility of the wrapped content, especially for users with motion sensitivity.
+
+## Customization
+
+The fade-in animation and styling can be customized by modifying the external CSS associated with the `pop-in-section` and `is-show` classes. Further customization can be done by extending the component to accept additional props for controlling other aspects of the animation or styling.
+
+## Cleanup
+
+The `useEffect` hook includes a cleanup function to call `observer.unobserve()` when the component is unmounted, preventing potential memory leaks associated with the `IntersectionObserver` instance.
+
+## Intersection Observer
+
+The `IntersectionObserver` is used to asynchronously observe changes in the intersection status of the `div` element with the viewport, which triggers the fade-in animation when the element comes into view.

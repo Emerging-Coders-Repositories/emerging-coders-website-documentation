@@ -1,0 +1,59 @@
+# ExecBoard Component Documentation
+
+The `ExecBoard` component serves as a container for rendering a list of executive board members using the `ExecBoardCards` component. The component is structured to display a section with a title, a description, and a grid of cards each representing a board member.
+
+## State and Effects
+
+- `visibleMembers` (array): A stateful array that holds the list of members which should be visible on the screen.
+- `execBoardMembers` (array): An array containing objects with details about each board member.
+- `useEffect`: A hook that sets up an interval to gradually reveal each executive board member card with a slight delay, providing an animation effect. The interval is cleared when the component unmounts or when all members are visible.
+
+## Rendered UI
+
+The `ExecBoard` component renders the following UI elements:
+
+- A section with a `bg-white dark:bg-gray-900` background color.
+- A title ("Meet the Emerging Coders Team") and a description paragraph.
+- A grid container that holds individual `ExecBoardCards` components, each representing a board member. The grid adapts to different screen sizes with responsive column layouts.
+
+## Usage
+
+The `ExecBoard` component is self-contained and can be imported and used in other parts of the application. Below is an example of how to use the `ExecBoard` component:
+
+```jsx
+import React from "react";
+import ExecBoard from "./ExecBoard";
+
+function App() {
+    return (
+        <div>
+            <ExecBoard />
+        </div>
+    );
+}
+
+export default App;
+```
+
+## Component Structure
+
+- The `ExecBoard` component initializes with an empty `visibleMembers` array.
+- The `useEffect` hook sets up an interval to update `visibleMembers`, gradually adding one member at a time from the `execBoardMembers` array to the `visibleMembers` array every 80 milliseconds.
+- The `ExecBoardCards` component is used to render each member's card within a responsive grid. The `isVisible` prop of each `ExecBoardCards` component is determined by whether the member is present in the `visibleMembers` array, controlling the visibility and transition effect of the cards.
+
+## Dependencies
+
+- React
+- next-ui (for the `ExecBoardCards` component)
+
+## Accessibility
+
+This component adheres to basic accessibility standards with semantic HTML elements and a clear heading structure. Further accessibility improvements can be made by ensuring that all interactive elements are keyboard-navigable and by providing appropriate ARIA attributes where necessary.
+
+## Styling
+
+The component uses Tailwind CSS for styling, which provides utility classes to build custom designs directly in your markup. The dark mode styles are applied conditionally based on the `dark` class in the parent element.
+
+## Customization
+
+To customize the appearance or behavior of the `ExecBoard` component, you may modify the `execBoardMembers` array or adjust the Tailwind CSS classes and HTML structure within the render method.

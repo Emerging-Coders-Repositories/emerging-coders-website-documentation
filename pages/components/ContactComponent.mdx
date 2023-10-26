@@ -1,0 +1,74 @@
+# ContactComponent Documentation
+
+The `ContactComponent` is a React component designed to provide a contact form for users to send messages. It handles form submission, input validation, and displays modals on successful submission or error.
+
+## Props
+
+The `ContactComponent` does not accept any props as it is self-contained.
+
+## State Variables
+
+- `email`, `subject`, `message`: These state variables hold the values entered in the respective fields of the contact form.
+- `isOpen`, `onOpen`, `onOpenChange`: These are derived from the `useDisclosure` hook to manage the modal's open/close state.
+- `isFormSubmitted`: A boolean that tracks if the form has been successfully submitted.
+- `isFormSubmitting`: A boolean that tracks if the form is currently being submitted.
+- `formError`: A boolean that tracks if there has been an error in form submission.
+
+## Rendered UI
+
+The `ContactComponent` renders the following UI elements:
+
+- A contact form with fields for email, subject, and message.
+- A "Send Message" button to submit the form.
+- Two different modals for successful form submission and error in form submission.
+
+## Form Submission
+
+The form submission is handled by the `handleSubmit` function which:
+1. Prevents the default form submission behavior.
+2. Sets `isFormSubmitting` to `true`.
+3. Sends a POST request to a server with the form data.
+4. On success, sets `isFormSubmitting` to `false`, and `isFormSubmitted` to `true` to trigger the success modal.
+5. On error, logs the error to console, sets `isFormSubmitting` to `false`, and `formError` to `true` to trigger the error modal.
+
+## Modal Displays
+
+- **Success Modal**: Displayed when `isFormSubmitted` is `true`, thanking the user for their message and providing further contact info and navigation options.
+- **Error Modal**: Displayed when `formError` is `true`, apologizing for the inconvenience and providing an email address for direct contact.
+
+## Styling
+
+The component uses Tailwind CSS for styling and the Next UI library for the modal and button components, achieving a clean and modern aesthetic.
+
+## Dependencies
+
+- React
+- Next UI library (`@nextui-org/react`)
+- Axios for handling HTTP requests.
+
+## Usage
+
+The `ContactComponent` is self-contained and can be utilized as a standalone contact page in your application. It can be imported and used in other parts of your application as follows:
+
+```jsx
+import React from "react";
+import ContactComponent from "./ContactComponent";
+
+function App() {
+    return (
+        <div>
+            <ContactComponent />
+        </div>
+    );
+}
+
+export default App;
+```
+
+## Accessibility
+
+The form fields and buttons are labeled and accessible. Further accessibility improvements can be achieved by ensuring that all interactive elements are keyboard-navigable, and by providing appropriate ARIA attributes where necessary.
+
+## Customization
+
+The `ContactComponent` can be customized by modifying the Tailwind CSS classes, HTML structure, or by adjusting the axios `post` request in the `handleSubmit` function to match your server's API endpoint and requirements.

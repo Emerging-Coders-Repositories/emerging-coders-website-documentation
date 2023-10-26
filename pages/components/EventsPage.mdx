@@ -1,0 +1,61 @@
+# EventsPage Component Documentation
+
+The `EventsPage` component serves as a dedicated page within your web application for displaying upcoming events. It incorporates a separate `UpcomingEventsComponent` to list the upcoming events and provides a navigation button to view past events.
+
+## Props
+
+The `EventsPage` component does not accept any props as it is designed to be self-contained.
+
+## Rendered UI
+
+The `EventsPage` component renders the following UI elements:
+
+- A page title ("View Our Events Below") and a descriptive paragraph, both centrally aligned.
+- The `UpcomingEventsComponent` which presumably lists the upcoming events.
+- A button labeled "View Our Past Events" which navigates to a page listing past events.
+
+## Usage
+
+The `EventsPage` component can be utilized wherever a dedicated events page is required in your application. Below is an example of how to use the `EventsPage` component:
+
+```jsx
+import React from "react";
+import EventsPage from "./EventsPage";
+
+function App() {
+    return (
+        <div>
+            <EventsPage />
+        </div>
+    );
+}
+
+export default App;
+```
+
+## Component Structure
+
+The `EventsPage` component is structured as follows:
+
+- A container `div` with a white background that expands to at least the full height of the viewport.
+- A nested `div` that provides padding and centers the content within a maximum width.
+- A title and description paragraph providing information about the events.
+- The `UpcomingEventsComponent` that is presumed to render the list of upcoming events.
+- A `Button` component from the `next-ui` library that navigates to a page listing past events.
+
+## Dependencies
+
+- React
+- next-ui (for the `Button` and `Link` components)
+
+## Styling
+
+The component utilizes Tailwind CSS for styling which allows for a clean and modern design with utility classes directly applied in the markup. The `dark` mode styles are conditionally applied based on a parent element's class.
+
+## Accessibility
+
+The component makes use of semantic HTML elements which provide a basic level of accessibility. Further accessibility improvements can be achieved by ensuring all interactive elements are keyboard navigable and have appropriate ARIA attributes.
+
+## Customization
+
+The appearance and behavior of the `EventsPage` component can be customized by adjusting the Tailwind CSS classes, HTML structure, or by passing additional props to the `UpcomingEventsComponent` if required. The navigation URL in the "View Our Past Events" button can also be updated to match the routing structure of your application.

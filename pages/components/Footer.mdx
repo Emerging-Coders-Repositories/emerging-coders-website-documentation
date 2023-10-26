@@ -1,0 +1,85 @@
+# `Footer` Component Documentation
+
+The `Footer` component serves as the footer section of a webpage. It includes navigational links, copyright information, and credits. It's designed to be a common footer across different pages of the web application.
+
+## Component Structure
+
+```jsx
+import React from "react";
+
+export default function Footer() {
+
+    // ... component definition
+
+    return (
+        <footer class="p-4 bg-gray-800 md:p-8 lg:p-10 dark:bg-gray-800 z-100">
+            {/* ... JSX markup */}
+        </footer>
+    );
+};
+```
+
+## Props
+
+This component does not accept any props.
+
+## Usage
+
+```jsx
+<Footer />
+```
+
+## Rendered UI
+
+The `Footer` component renders a footer section containing:
+- The title "Emerging Coders".
+- A set of navigation links.
+- Copyright and creator credit information.
+- A link to an open-source contribution page.
+
+## Behavior
+
+- Each navigation link redirects the user to a different page within the web application when clicked.
+- The link to the creator's LinkedIn profile and the open-source contribution page open in a new tab when clicked.
+
+## Styling
+
+- Tailwind CSS is used for styling the component.
+- The `bg-gray-800` and `dark:bg-gray-800` classes set the background color of the footer.
+- The `p-4`, `md:p-8`, and `lg:p-10` classes set the padding for the footer across different screen sizes.
+- The `text-white` and `dark:text-gray-400` classes set the text color.
+- The `hover:underline` class adds an underline to links when they are hovered over.
+
+## Accessibility
+
+- `a` elements should have discernible text for screen readers. The `a` elements linking to the creator's LinkedIn profile and the open-source contribution page should have an `aria-label` attribute to describe the destination.
+  
+```jsx
+<a href="https://www.linkedin.com/in/ethanpineda/" target="blank" aria-label="Ethan Pineda LinkedIn Profile" class="hover:underline">Ethan Pineda</a>
+<a href="https://github.com/ethanpaneraa/Emerging-Coders-Website" target="blank" aria-label="Open Source Contribution Page on GitHub" class="hover:underline">here</a>
+```
+
+## Dependencies
+
+- React
+- Tailwind CSS for styling.
+
+## Customization
+
+- Update the `links` array to reflect the actual pages and URLs of the web application.
+- Change the `href` attribute of the `a` elements to point to the correct URLs for the creator's LinkedIn profile and the open-source contribution page.
+- Update the text and styling as needed to match the branding of the web application.
+
+## External Content
+
+The links to the creator's LinkedIn profile and the open-source contribution page are external content. Ensure that the URLs are correct.
+
+## Intersection with Other Components
+
+The `Footer` component can be included in the layout of pages across the web application to provide consistent navigation and information.
+
+## Cleanup
+
+No specific cleanup is required for this component as there are no side effects being managed.
+
+The `Footer` component is a crucial part of the web application's layout, providing necessary navigational links and information to users in a visually appealing and accessible manner.

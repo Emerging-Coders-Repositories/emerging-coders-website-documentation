@@ -1,0 +1,98 @@
+# `FeaturedImage` Component Documentation
+
+The `FeaturedImage` component is a React component utilized to display a collection of images in a structured grid layout. The primary use-case for this component is to showcase a set of featured images in a visually appealing manner.
+
+## Component Structure
+
+```jsx
+import React from "react"; 
+
+export default function FeaturedImage() {
+    return (
+        <div class="max-w-xl">
+            <div class="grid gap-5">
+                <div>
+                    <img class="h-auto max-w-full rounded-lg" src="/Photo3.png" alt="" />
+                </div>
+                <div class="grid grid-cols-5 gap-4">
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg" src="/Photo8.png" alt="" />
+                    </div>
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg" src="/Photo5.png" alt="" />
+                    </div>
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg" src="/Photo1.png" alt="" />
+                    </div>
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg" src="/Photo4.png" alt="" />
+                    </div>
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg" src="/Photo6.png" alt=""/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+};
+```
+
+## Props
+
+This component does not accept any props.
+
+## Usage
+
+```jsx
+<FeaturedImage />
+```
+
+## Rendered UI
+
+The `FeaturedImage` component renders a grid of images with a larger featured image followed by a grid of smaller images below it. Each image is styled with rounded corners.
+
+## Behavior
+
+There's no interactive behavior associated with this component.
+
+## Styling
+
+- The component employs Tailwind CSS classes for styling.
+- The `rounded-lg` class provides rounded corners to each image.
+- The `grid` and `grid-cols-5` classes are used to create a grid layout for the images.
+- The `gap-4` and `gap-5` classes provide spacing between grid items.
+- The `max-w-xl` class on the outer `div` sets a maximum width for the component.
+
+## Accessibility
+
+- Alt text is not provided for the images, which is a potential accessibility issue. It's recommended to add meaningful alt text to each image to improve accessibility.
+
+```jsx
+<img class="h-auto max-w-full rounded-lg" src="/Photo3.png" alt="Description of Image" />
+```
+
+## Dependencies
+
+- React
+- Tailwind CSS for styling.
+
+## Customization
+
+To customize the component:
+- Replace the `src` attribute of each `img` tag to point to the desired image source.
+- Update Tailwind CSS classes to modify the appearance.
+- Provide alt text for each image for improved accessibility.
+
+## External Content
+
+The images used in this component are external content. Ensure that the paths to these images are correct and that they are available in the public directory of your project.
+
+## Intersection with Other Components
+
+The `FeaturedImage` component can be used independently or integrated within other components or pages to create a section of featured images.
+
+## Cleanup
+
+No specific cleanup is required for this component as there are no side effects being managed.
+
+The simplicity of the `FeaturedImage` component makes it a straightforward and easy-to-use solution for displaying a collection of images in a structured layout within a web application.

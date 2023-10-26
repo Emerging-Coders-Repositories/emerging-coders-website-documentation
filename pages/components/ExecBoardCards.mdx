@@ -1,0 +1,72 @@
+# ExecBoardCards Component Documentation
+
+The `ExecBoardCards` component is a React component designed to display information about a member of the executive board in a card format. This component utilizes Tailwind CSS and Next.UI for a modern and clean aesthetic.
+
+## Props
+
+The component accepts the following props:
+
+- `role` (string): The role or title of the board member.
+- `name` (string): The name of the board member.
+- `pronouns` (string): The pronouns of the board member.
+- `major` (string): The major or field of study of the board member.
+- `classStanding` (string): The class standing of the board member.
+- `linkedin` (string): The LinkedIn profile URL of the board member.
+- `img` (string): The URL of the image representing the board member.
+- `email` (string): The email address of the board member.
+- `website` (string, optional): The personal website URL of the board member.
+- `isVisible` (boolean): A flag to control the visibility and transition of the card.
+
+## Usage
+
+Below is a basic example of how to use the `ExecBoardCards` component:
+
+```jsx
+import React from "react";
+import ExecBoardCards from "./ExecBoardCards";
+
+function App() {
+    return (
+        <ExecBoardCards
+            role="President"
+            name="John Doe"
+            pronouns="He/Him"
+            major="Computer Science"
+            classStanding="Senior"
+            linkedin="https://www.linkedin.com/in/johndoe"
+            img="https://example.com/image.jpg"
+            email="john.doe@example.com"
+            isVisible={true}
+        />
+    );
+}
+
+export default App;
+```
+
+## Rendered UI
+
+The `ExecBoardCards` component renders a card with the following UI elements:
+
+- An image of the board member.
+- The name of the board member, which links to their personal website or LinkedIn profile.
+- The major, role, class standing, and pronouns of the board member displayed as text.
+- Icons linking to the board member's LinkedIn profile and email.
+
+## Styling
+
+The component uses Tailwind CSS classes for styling. Tailwind CSS classes are used for controlling text styles, colors, and the overall layout. 
+
+## Transitions
+
+The component has a transition effect which is controlled by the `isVisible` prop. When `isVisible` is `true`, the card appears with full opacity and no vertical translation. When `isVisible` is `false`, the card has zero opacity and is translated vertically down by a small amount, creating a fade-out and slide-down effect on hiding.
+
+## Accessibility
+
+The image includes an `alt` attribute to provide a text alternative for screen readers, improving the accessibility of the component.
+
+## Dependencies
+
+- React
+- Next.UI 
+- Tailwind CSS (optional, for styling)

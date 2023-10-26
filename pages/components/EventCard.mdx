@@ -1,0 +1,74 @@
+# EventCard Component Documentation
+
+The `EventCard` component is designed to display details of an event in a card format. It renders an image, title, date, time, description, and location of an event. Additionally, it provides an "Add to Calendar" button for upcoming events, utilizing the `AddToCalendarButton` component from 'add-to-calendar-button-react' library.
+
+## Props
+
+The component accepts the following props:
+
+- `imageUrl` (string): URL of the image representing the event.
+- `title` (string): Title of the event.
+- `date` (string): Date of the event.
+- `time` (string): Start time of the event.
+- `endTime` (string): End time of the event.
+- `description` (string): Description of the event.
+- `location` (string): Location of the event.
+- `formattedDate` (string): Formatted date of the event.
+- `formattedStartTime` (string): Formatted start time of the event.
+- `formattedEndTime` (string): Formatted end time of the event.
+- `upcoming` (boolean): Flag indicating whether the event is upcoming.
+
+## Usage
+
+Below is a basic example of how to use the `EventCard` component:
+
+```jsx
+import React from "react";
+import EventCard from "./EventCard";
+
+function App() {
+    return (
+        <EventCard
+            imageUrl="https://example.com/image.jpg"
+            title="Coding Workshop"
+            date="2023-11-25"
+            time="10:00 AM"
+            endTime="12:00 PM"
+            description="A workshop on basic coding principles."
+            location="Online"
+            formattedDate="November 25, 2023"
+            formattedStartTime="10:00 AM"
+            formattedEndTime="12:00 PM"
+            upcoming={true}
+        />
+    );
+}
+
+export default App;
+```
+
+## Rendered UI
+
+The `EventCard` component renders a card with the following UI elements:
+
+- An image of the event.
+- The title, location, date, and time of the event.
+- A paragraph for the description of the event.
+- An "Add to Calendar" button for upcoming events, which triggers a modal allowing users to add the event to their preferred calendar.
+
+## Styling
+
+The component uses Tailwind CSS classes for styling, creating a clean and modern design. The `dark` mode styles are conditionally applied based on a parent element's class.
+
+## Dependencies
+
+- React
+- `add-to-calendar-button-react` library for the "Add to Calendar" functionality.
+
+## Accessibility
+
+The image includes an `alt` attribute to provide a text alternative for screen readers, improving the accessibility of the component. Further accessibility improvements can be made by ensuring that all interactive elements are keyboard-navigable and by providing appropriate ARIA attributes where necessary.
+
+## Customization
+
+To customize the appearance or behavior of the `EventCard` component, you may modify the Tailwind CSS classes, HTML structure, or adjust the properties of the `AddToCalendarButton` component.

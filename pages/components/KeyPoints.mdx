@@ -1,0 +1,87 @@
+# `KeyPoints` Component Documentation
+
+The `KeyPoints` component serves as a section on a webpage to highlight the key objectives or activities of Emerging Coders. It is structured to present three main points: Mentorship, Technical Development, and Establishing Community, each accompanied by an icon, title, and description.
+
+## Component Structure
+
+```jsx
+import React from "react"; 
+import FadeInAnimation from "../FadeInAnimation/FadeInAnimation";
+
+export default function KeyPoints() {
+
+    // ... component definition
+
+    return (
+        <div class="py-8 px-10 mx-auto max-w-screen-2xl text-center lg:py-16 lg:px-6">
+            <FadeInAnimation>
+                {/* ... JSX markup */}
+            </FadeInAnimation>
+        </div>
+    );
+};
+```
+
+## Props
+
+This component does not accept any props.
+
+## Usage
+
+```jsx
+<KeyPoints />
+```
+
+## Rendered UI
+
+The `KeyPoints` component renders a section with a title "What We Do At Emerging Coders" and three sub-sections with icons, titles, and descriptions explaining the key activities or points of focus.
+
+## Behavior
+
+- The component uses the `FadeInAnimation` component to apply a fading animation as it comes into view.
+
+## Styling
+
+- Tailwind CSS is used for styling the component.
+- The `py-8`, `px-10`, `mx-auto`, `max-w-screen-2xl`, `text-center`, `lg:py-16`, and `lg:px-6` classes are used to apply padding, margin, and text alignment styles to the component.
+- The `text-neutral-500`, `dark:text-neutral-300`, `text-neutral-200`, and `dark:text-neutral-200` classes are used to apply text color styles to the descriptions.
+- The `text-3xl`, `font-bold`, `text-gray-900`, `md:text-4xl`, `dark:text-black`, and `my-11` classes are used to style the section title.
+- The `grid`, `gap-x-6`, `md:grid-cols-3`, `lg:gap-x-12`, and `mb-12` classes are used to create a grid layout for the three sub-sections.
+
+## Accessibility
+
+- `svg` elements should have a `role="img"` attribute, and a `<title>` child element with a descriptive text.
+  
+```jsx
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="black" class="h-6 w-6" role="img">
+    <title>Mentorship Icon</title>
+    {/* ... */}
+</svg>
+```
+
+- Additionally, meaningful images should have an `alt` text. Since the icons in this component are purely decorative, they do not need an `alt` text.
+
+## Dependencies
+
+- React
+- `FadeInAnimation` component from `../FadeInAnimation/FadeInAnimation`
+- Tailwind CSS for styling.
+
+## Customization
+
+- The content in the `KeyPoints` component can be updated to reflect the actual key points of focus or activities.
+- Icons and colors can be updated to match the branding and design system of the web application.
+
+## External Content
+
+There is no external content in this component.
+
+## Intersection with Other Components
+
+The `KeyPoints` component can be included on any page where highlighting key activities or points of focus is needed.
+
+## Cleanup
+
+No specific cleanup is required for this component as there are no side effects being managed.
+
+The `KeyPoints` component is a well-structured and visually appealing way to convey the main objectives or activities of Emerging Coders to the users, making it an essential part of the web application's content strategy.

@@ -1,0 +1,62 @@
+# `PastEventsComponent` Component Documentation
+
+The `PastEventsComponent` component showcases past events conducted by Emerging Coders in a structured layout, providing a glimpse of the organization's activities to visitors.
+
+## Component Structure
+
+```jsx
+import React from "react"; 
+import PastEventsGrid from "../PastEventsGrid/PastEventsGrid";
+import FadeInAnimation from "../FadeInAnimation/FadeInAnimation";
+
+export default function PastEventsComponent() {
+    // ... component code
+    return (
+        <div class="bg-gray-50 p-10">
+            {/* ... JSX markup */}
+        </div>
+    );
+};
+```
+
+## Props
+
+The component does not accept any props.
+
+## Usage
+
+```jsx
+<PastEventsComponent />
+```
+
+## Rendered UI
+
+- The component renders a section with the title "What We've Done," a description of past events, and a link to the upcoming events page.
+- Nested within this component is the `PastEventsGrid` component that likely displays a grid of past events.
+- The entire section is wrapped within a `FadeInAnimation` component, which likely provides a fade-in animation effect upon rendering.
+
+## Behavior
+
+- The component provides a static UI section showcasing past events, with a nested grid of events and a text description.
+- The link within the text description navigates users to the upcoming events page when clicked.
+
+## Styling
+
+- Tailwind CSS classes are utilized for styling purposes, providing a clean and structured layout.
+- A light gray background (`bg-gray-50`) is applied to the main div element, providing a subtle contrast against the content.
+
+## Accessibility
+
+- The `PastEventsComponent` does not include specific accessibility features outside of standard HTML semantics.
+
+## Dependencies
+
+- The `PastEventsComponent` depends on the `PastEventsGrid` and `FadeInAnimation` components, which must be correctly imported and functional for the `PastEventsComponent` to render as intended.
+
+## Code Improvements and Suggestions
+
+- Consider adding a `className` attribute instead of `class` to adhere to JSX syntax standards.
+- Ensure that the `PastEventsGrid` component is adequately documented and tested, as it is a nested dependency.
+- The `dark:gray-300` class appears to be a typo. It should be `dark:text-gray-300` to ensure the text color is styled correctly in dark mode.
+- Make sure that the `href` link `/UpcomingEvents` routes to the correct page, and that the page is correctly set up to handle this route.
+- Ensure that the `FadeInAnimation` component is well-documented and tested to ensure a smooth animation experience.

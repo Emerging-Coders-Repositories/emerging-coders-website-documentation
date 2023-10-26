@@ -1,0 +1,51 @@
+# `NavigationBar` Component Documentation
+
+The `NavigationBar` component is an integral part of the user interface, providing navigation links to various sections of the web application. It includes a responsive design to cater to both desktop and mobile users, with a dropdown menu for certain sections.
+
+## Component Structure
+
+```jsx
+import React from "react";
+import { useState } from "react"; 
+
+export default function NavigationBar() {
+    // ... component code
+    return (
+        <nav className="bg-white border-gray-200 dark:bg-gray-900" >
+            {/* ... JSX markup */}
+        </nav>
+    );
+};
+```
+
+## Props
+
+The component does not accept any props.
+
+## Usage
+
+```jsx
+<NavigationBar />
+```
+
+## Rendered UI
+
+- A navigation bar with links to different sections/pages of the website.
+- A responsive design that adapts to various screen sizes.
+- Dropdown menus for "Resources" and "Opportunities" sections with sub-links.
+
+## Behavior
+
+- On smaller screen sizes, a hamburger menu icon appears. Clicking on this icon toggles the visibility of the navigation links.
+- The "Resources" and "Opportunities" links have associated dropdown menus that display additional sub-links when clicked.
+- Clicking outside of an open dropdown menu will close the menu.
+
+## Styling
+
+- The component utilizes Tailwind CSS classes for styling.
+- The `dark` mode styling is achieved through Tailwind CSS's dark mode feature.
+
+## Accessibility
+
+- Aria attributes (`aria-controls`, `aria-expanded`) are used to improve accessibility, particularly for screen reader users.
+- The `sr-only` class

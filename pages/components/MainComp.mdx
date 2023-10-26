@@ -1,0 +1,77 @@
+# `MainComp` Component Documentation
+
+The `MainComp` component serves as the root component for your web application, encapsulating all the primary sections of your site. It integrates the `NavigationBar`, `LandingPage`, and `Footer` components to create a cohesive user interface.
+
+## Component Structure
+
+```jsx
+import React from "react";
+import NavigationBar from "../NavigationBar/NavigationBar";
+import Footer from "../Footer/Footer";
+import LandingPage from "../LandingPage/LandingPage";
+import { NextUIProvider } from "@nextui-org/react";
+
+export default function MainComp() {
+    return (
+        <div>
+            <NextUIProvider>
+                <NavigationBar />
+                <LandingPage />
+                <Footer />
+            </NextUIProvider>
+        </div>
+    )
+}
+```
+
+## Props
+
+This component does not accept any props.
+
+## Usage
+
+```jsx
+<MainComp />
+```
+
+## Rendered UI
+
+- A `NavigationBar` at the top of the page.
+- A `LandingPage` component serving as the main content area.
+- A `Footer` component at the bottom of the page.
+
+## Behavior
+
+- The `MainComp` component acts as a container and structural framework for your application, ensuring the correct order and arrangement of the `NavigationBar`, `LandingPage`, and `Footer` components.
+
+## Styling
+
+- There's no explicit styling applied to the `MainComp` component itself. However, it encapsulates other components (`NavigationBar`, `LandingPage`, `Footer`) that come with their own styling.
+- The `NextUIProvider` wrapper ensures that styles and behaviors from the `@nextui-org/react` library are correctly applied to components within.
+
+## Accessibility
+
+- Ensure that the encapsulated components (`NavigationBar`, `LandingPage`, `Footer`) adhere to accessibility standards to create a user-friendly experience for all visitors, including those using assistive technologies.
+
+## Dependencies
+
+- React
+- `@nextui-org/react` for the `NextUIProvider`.
+- `NavigationBar` component from `../NavigationBar/NavigationBar`.
+- `Footer` component from `../Footer/Footer`.
+- `LandingPage` component from `../LandingPage/LandingPage`.
+
+## Customization
+
+- The `MainComp` component can be extended by including additional sections or components as needed.
+- The order or structure of encapsulated components can be adjusted to meet the design requirements of your application.
+
+## Intersection with Other Components
+
+- This component acts as the primary container for the `NavigationBar`, `LandingPage`, and `Footer` components, ensuring they are rendered in the correct order.
+
+## Cleanup
+
+- No specific cleanup is required as there are no side effects being managed.
+
+The `MainComp` component is crucial as it organizes and renders the primary sections of your application. By encapsulating the `NavigationBar`, `LandingPage`, and `Footer` components within a `NextUIProvider`, it ensures that your application benefits from the styling and behavior utilities provided by the `@nextui-org/react` library.

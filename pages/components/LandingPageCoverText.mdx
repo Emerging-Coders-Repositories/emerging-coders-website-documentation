@@ -1,0 +1,90 @@
+# `LandingPageCoverText` Component Documentation
+
+The `LandingPageCoverText` component is designed to showcase the central message of the Emerging Coders community on the landing page of the application. It combines a headline, a subheadline, and action buttons, all presented with a fade-in animation effect.
+
+## Component Structure
+
+```jsx
+import React from "react"; 
+import { Button } from "@nextui-org/react";
+import FadeInAnimation from "../FadeInAnimation/FadeInAnimation.jsx";
+
+export default function LandingPageCoverText() {
+
+    return (
+        <div class="flex flex-col items-center justify-center px-4 text-center text-black gap-5">
+            <FadeInAnimation>
+                <h1 class="text-4xl font-bold md:text-5xl lg:text-6xl">Emerging Coders</h1>
+                <p class="mt-2 text-lg md:text-xl lg:text-2xl">Northwestern University's Community of First-Generation and Low-Income Technologist</p>
+                <div class="flex flex-row justify-center mt-6 space-x-4 gap-2">
+                    <Button color="secondary"  onPress={() => window.open("https://groupme.com/join_group/89417887/c1x6DI3U", "_blank")}>
+                        Join
+                    </Button>
+                    <Button color="secondary">
+                        <a href="#About" name="About">About</a>
+                    </Button>
+                </div>
+            </FadeInAnimation>
+        </div>
+    );
+};
+```
+
+## Props
+
+This component does not accept any props.
+
+## Usage
+
+```jsx
+<LandingPageCoverText />
+```
+
+## Rendered UI
+
+- The title "Emerging Coders" displayed in large, bold text.
+- A subtitle describing the community.
+- Two buttons - one for joining the community and another to navigate to the 'About' section.
+
+## Behavior
+
+- The content inside the component fades in on render, thanks to the wrapping `FadeInAnimation` component.
+- Clicking the "Join" button opens a new tab directing the user to a GroupMe joining link.
+- Clicking the "About" button navigates the user to the 'About' section of the page.
+
+## Styling
+
+- The component utilizes Tailwind CSS for styling:
+    - `flex`, `flex-col`, `items-center`, `justify-center`, `px-4`, `text-center`, `text-black`, and `gap-5` for layout and spacing.
+    - Font sizes and weights are controlled with classes like `text-4xl`, `font-bold`, etc.
+- The buttons use the `@nextui-org/react` library's `Button` component, with a color of 'secondary'.
+
+## Accessibility
+
+- Ensure that the fade-in effect does not hinder accessibility for users with motion sensitivity or other accessibility needs.
+
+## Dependencies
+
+- React
+- `@nextui-org/react` for the `Button` component.
+- `FadeInAnimation` component from `../FadeInAnimation/FadeInAnimation.jsx`.
+
+## Customization
+
+- The text content, button labels, and URLs can be updated to reflect any changes in branding or organization details.
+- The `FadeInAnimation` effect can be customized or replaced to match desired visual styling.
+- Button colors and styles can be altered via the `@nextui-org/react` library's `Button` component.
+
+## External Content
+
+- The 'Join' button directs users to an external GroupMe link.
+
+## Intersection with Other Components
+
+- This component is intended to be used within the `LandingPageCover` component to provide a textual overlay on top of the animated background.
+
+## Cleanup
+
+- No specific cleanup is required as there are no side effects being managed outside of the `FadeInAnimation` component.
+
+The `LandingPageCoverText` component serves to engage visitors right from the landing page by providing a clear headline, subheadline, and call-to-action buttons. The fade-in animation adds a pleasing visual effect that draws attention to the core message of the Emerging Coders community.
