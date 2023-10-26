@@ -1,0 +1,47 @@
+## Setting Up the Codebase
+
+To get started with the development, you'll need to fork and clone the repository to your local machine. Below are the steps to guide you through this process:
+
+Before doing this, make sure you have [Node.js](/setup/node) and [Github Command Line Tools](/setup/node) installed on your machine.
+
+### Forking the Repository
+
+1. Navigate to the [Emerging Coders Website repository](https://github.com/ethanpaneraa/Emerging-Coders-Website) on GitHub.
+2. In the top-right corner of the page, click the **Fork** button. This will create a copy of the repository in your GitHub account.
+
+### Cloning the Repository
+
+1. Now, go to your fork of the Emerging Coders Website repository in your GitHub account.
+2. Click the **Code** button (it's green) found at the top-right part of the repository.
+3. Copy the URL provided in the HTTPS tab.
+4. Open a terminal on your machine.
+5. Navigate to the directory where you want to clone the repository.
+6. Run the following command, replacing `your-username` with your GitHub username:
+   ```bash
+   git clone https://github.com/your-username/Emerging-Coders-Website.git
+   ```
+
+### Loading the Codebase
+
+1. Once the repository is cloned, navigate into the project directory:
+   ```bash
+   cd Emerging-Coders-Website
+   ```
+2. Now, install the necessary dependencies by running:
+   ```bash
+   npm install
+   ```
+   or if you prefer using Yarn:
+   ```bash
+   yarn install
+   ```
+3. After the dependencies are installed, you can start the development server by running:
+   ```bash
+   npm run dev
+   ```
+   or with Yarn:
+   ```bash
+   yarn dev
+   ```
+
+Now, the project should be running locally on your machine. Open your web browser and navigate to `http://localhost:3000` to view the website. As you make changes to the code, the website will automatically update to reflect those changes, thanks to the hot-reloading feature provided by Next.js.
