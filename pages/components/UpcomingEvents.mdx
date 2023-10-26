@@ -1,0 +1,68 @@
+# UpcomingEventsComponent Documentation
+
+## Overview
+`UpcomingEventsComponent` is a React component designed to fetch, handle, and display a list of upcoming events. It utilizes Supabase for data fetching, and renders a list of event cards, each representing an upcoming event.
+
+## Imports
+- `React`, `useState`, `useEffect` from "react"
+- `supabase` from '../../../../src/client'
+- `Progress` from "@nextui-org/react"
+- `EventCard` from "../EventCard/EventCard"
+
+## States
+- `events`: An array to hold all of the upcoming events.
+- `fetchingError`: A boolean to indicate if there was an error fetching the events.
+- `isFetching`: A boolean to indicate if the events are currently being fetched.
+
+## Functions
+
+### fetchUpcomingEvents
+An asynchronous function that fetches all upcoming events from the Supabase database. It only fetches events with dates greater than or equal to today's date. In case of an error during fetching, it sets `fetchingError` to true.
+
+### formatDate
+A function to format the date into a more readable format. It takes a date string as input and returns a string formatted as `Month Day, Year`.
+
+### convertTo12HourTime
+A function to convert a 24-hour time format to a 12-hour time format with AM/PM. It takes a time string as input and returns a string formatted as `HH:MM AM/PM`.
+
+## useEffect Hook
+A `useEffect` hook is used to call `fetchUpcomingEvents` when the component mounts.
+
+## Conditional Rendering
+- If there's an error fetching events (`fetchingError` is true), an error message is displayed with a link to an Instagram page for checking events.
+- If the events are being fetched (`isFetching` is true), a loading indicator is displayed.
+- If there are no upcoming events and fetching has completed, a message indicating no upcoming events is displayed.
+- If there are upcoming events, a list of `EventCard` components is rendered, each representing an upcoming event.
+
+## Props Passed to EventCard
+For each event, the following props are passed to the `EventCard` component:
+- `imageUrl`
+- `title`
+- `location`
+- `date`
+- `description`
+- `time`
+- `endTime`
+- `formattedStartTime`
+- `formattedEndTime`
+- `formattedDate`
+- `upcoming`
+
+## Usage
+Import `UpcomingEventsComponent` and use it in your JSX code to render the component and display the upcoming events.
+
+```jsx
+import UpcomingEventsComponent from 'path-to-UpcomingEventsComponent';
+
+function App() {
+  return (
+    <div>
+      <UpcomingEventsComponent />
+    </div>
+  );
+}
+
+export default App;
+```
+
+This documentation covers the structure and functionality of `UpcomingEventsComponent`, providing an understanding of how the component fetches and displays upcoming events, and how it handles different scenarios like fetching errors or no upcoming events.

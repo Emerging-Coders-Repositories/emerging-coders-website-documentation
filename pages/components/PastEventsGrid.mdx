@@ -1,0 +1,40 @@
+# `PastEventsGrid` Component Documentation
+
+The `PastEventsGrid` component is a simple grid layout to showcase images from past events. It is designed to dynamically render images within a grid structure.
+
+## Component Structure
+
+```jsx
+import React from "react"; 
+
+export default function PastEventsGrid() {
+    // ... component code ...
+    return (
+        // ... JSX markup ...
+    );
+};
+```
+
+## Props
+
+The component signature suggests it could accept props, but currently, it doesn't accept or use any props.
+
+## Usage
+
+```jsx
+<PastEventsGrid />
+```
+
+## Rendered UI
+
+The component renders a grid of images with two columns on smaller screens and three columns on medium and larger screens. Each image is displayed within a rounded container.
+
+## Behavior
+
+- **Image Rendering:** The component iterates through an array of image URLs, rendering an `img` element for each image.
+- **Responsive Layout:** The grid adjusts the number of columns based on the screen size, transitioning from a 2-column layout to a 3-column layout at the medium breakpoint.
+
+## Styling
+
+- **Grid Layout:** Utilizes Tailwind CSS's grid utilities to create a responsive grid layout.
+- **Image Styling:** Images are styled to have rounded corners and to scale responsively with the grid containers.

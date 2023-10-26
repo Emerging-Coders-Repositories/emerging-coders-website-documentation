@@ -1,0 +1,84 @@
+# UnderclassmenOpportunitiesTable Component Documentation
+
+The `UnderclassmenOpportunitiesTable` component is a specialized React component designed to fetch, process, and display a list of internship opportunities for underclassmen for the summer of 2024. The data for the internship opportunities is fetched from a remote README file, which is then parsed to extract the necessary information. The component utilizes various components from the `@nextui-org/react` library to render a table listing the internships along with a progress indicator and pagination controls.
+
+## Props
+
+The component does not accept any props.
+
+## State
+
+The following state variables are managed within this component:
+
+- `readmeData`: Stores the raw data fetched from the remote README file.
+- `jobsList`: Stores the list of internship opportunities extracted from the README data.
+- `fetchingError`: Indicates whether an error occurred while fetching the README data.
+- `isFetching`: Indicates whether the data is currently being fetched.
+- `page`: Stores the current page number for pagination.
+- `pages`: Stores the total number of pages for pagination.
+- `search`: Stores the current search query (not currently utilized in this version of the component).
+- `rowsPerPage`: Stores the number of rows to display per page in the table (set to 10 and not currently utilized for pagination in this version of the component).
+
+## Rendered UI
+
+The `UnderclassmenOpportunitiesTable` component renders different UIs based on the state of data fetching and the presence of data:
+
+1. If an error occurs while fetching data, an error message is displayed.
+2. While data is being fetched, a loading indicator is displayed.
+3. If no internships are found, a message indicating this is displayed.
+4. If internships are found, a table listing the internships is displayed, along with pagination controls (though pagination is not fully implemented in this version of the component).
+
+## Usage
+
+```jsx
+import React from "react";
+import UnderclassmenOpportunitiesTable from "./UnderclassmenOpportunitiesTable";
+
+function App() {
+    return (
+        <UnderclassmenOpportunitiesTable />
+    );
+}
+
+export default App;
+```
+
+## Behavior
+
+- On component mount, the `fetchUnderclassmenREADME` function is invoked to fetch the README data.
+- The README data is then passed to the `decodeREADME` function to extract the internship opportunities and populate the `jobsList` state variable.
+- The `isInternshipsOpen` function is utilized to determine the status of each internship (open or closed).
+
+## Styling
+
+- The component utilizes Tailwind CSS classes for styling, alongside the default styles provided by the `@nextui-org/react` library for the Table, Progress, and Pagination components.
+- The dark mode styling is handled through Tailwind CSS classes, with conditional rendering based on a `dark` class.
+
+## Accessibility
+
+- The table rendered by this component has the `aria-label` property set to provide an accessible label.
+- The structure of the table and the use of ARIA roles, properties, and states provided by the `@nextui-org/react` library ensure that the table is accessible.
+
+## Dependencies
+
+- React
+- Axios for making HTTP requests.
+- `@nextui-org/react` library for the Table, Progress, and Pagination components.
+- Tailwind CSS for styling.
+
+## Customization
+
+- The URL from which the README data is fetched can be customized by modifying the `process.env.NEXT_PUBLIC_UNDERCLASSMEN_OPPORTUNITIES_URL` environment variable.
+- Additional styling and theming can be applied by extending or overriding the Tailwind CSS classes or by applying custom styles.
+
+## Cleanup
+
+The component does not manage any side effects that require cleanup.
+
+## External Content
+
+- The content of the internship listings is external and fetched from a remote README file. Any change in the content of the internship listings would require updating the README file at the source URL.
+
+## Intersection with Other Components
+
+The `UnderclassmenOpportunitiesTable` component is intended to be used independently and does not have direct dependencies on other components. However, it can be integrated into larger page layouts or used alongside other components to build a comprehensive listing of internship opportunities.

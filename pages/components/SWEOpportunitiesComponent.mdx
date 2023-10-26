@@ -1,0 +1,86 @@
+# `OpportunitiesComponent` Component Documentation
+
+The `OpportunitiesComponent` is a React component designed to fetch, display, and allow searching through a list of summer 2024 internships from a README.md file hosted on a specified URL.
+
+## Props
+
+The component does not accept any props.
+
+## State
+
+The following state variables are managed within this component:
+- `readmeData`: Holds the data fetched from the README.md file.
+- `jobsList`: Holds the list of jobs parsed from the README.md file.
+- `fetchingError`: Indicates if there was an error fetching the README.md file.
+- `isFetching`: Indicates if the data is currently being fetched.
+- `page`: Holds the current page number for pagination.
+- `pages`: Holds the total number of pages for pagination.
+- `search`: Holds the search query for filtering jobs.
+- `rowsPerPage`: Holds the number of rows per page, with a default value of 20.
+
+## Rendered UI
+
+The `OpportunitiesComponent` renders a section containing:
+- A title and subtitle.
+- A search input for filtering job listings.
+- A table displaying the company name, job title, application link, and the date the job was added.
+- Pagination controls for navigating through the list of jobs.
+
+## Usage
+
+```jsx
+import React from "react";
+import OpportunitiesComponent from "./OpportunitiesComponent";
+
+function App() {
+    return (
+        <OpportunitiesComponent />
+    );
+}
+
+export default App;
+```
+
+## Behavior
+
+- On component mount, `fetchREADME` function is called to fetch the README.md file from a specified URL.
+- The `decodeREADME` function is then called to parse the README.md file into a list of jobs using a regex pattern.
+- The `handleSearch` function updates the `search` state variable whenever the search input value changes.
+- The `filteredJobs` useMemo hook filters the `jobsList` based on the search query.
+- The `Pagination` component from `@nextui-org/react` is used to manage and display pagination controls.
+
+## Styling
+
+- The component utilizes Tailwind CSS classes for styling, along with the default styles provided by the `@nextui-org/react` library for the `Progress`, `Tab`, and `Pagination` components.
+- The dark mode styling is also handled through Tailwind CSS classes, with a conditional rendering based on a `dark` class.
+
+## Accessibility
+
+- The `NextTable` component from `@nextui-org/react` is used to render a table with appropriate ARIA roles, properties, and states ensuring accessibility.
+- The search input has an associated label (though visually hidden) to provide an accessible name.
+- Links within the table have `rel="noopener noreferrer"` attributes for security when opening external links.
+
+## Dependencies
+
+- React
+- `axios` library for making the HTTP request.
+- `@nextui-org/react` library for the `Progress`, `Tab`, `NextTable`, `Pagination`, and other UI components.
+- Tailwind CSS for styling.
+
+## Customization
+
+- The URL for fetching the README.md file can be customized by updating the `readmeURL` variable within the `fetchREADME` function.
+- The regex pattern within the `decodeREADME` function can be modified to match a different data format within the README.md file.
+
+## Cleanup
+
+No specific cleanup is required for this component as there are no side effects being managed.
+
+## External Content
+
+- The content of the job listings is fetched from an external README.md file.
+- Any change in the job listings content would require an update to the external README.md file.
+
+## Intersection with Other Components
+
+The `OpportunitiesComponent` is intended to be used independently and does not have direct dependencies on other components. However, it can be integrated into larger page layouts or used alongside other components to build a comprehensive job opportunities section or page.

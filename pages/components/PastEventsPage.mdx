@@ -1,0 +1,57 @@
+# `PastEvents` Component Documentation
+
+The `PastEvents` component is responsible for fetching, formatting, and displaying past events data from a database using Supabase. It provides an archive view where users can see details about past events.
+
+## Component Structure
+
+```jsx
+import React from "react"; 
+// ... imports ...
+export default function PastEvents() {
+    // ... component code ...
+    return (
+        // ... JSX markup ...
+    );
+};
+```
+
+## Props
+
+The component does not accept any props.
+
+## Usage
+
+```jsx
+<PastEvents />
+```
+
+## Rendered UI
+
+1. **Fetching State:** When data is being fetched, a loading message along with a loading spinner is displayed.
+2. **No Events State:** If there are no past events, a message indicating this is shown.
+3. **Events Display:** When there are past events, they are displayed in an `EventCard` component for each event.
+
+## Behavior
+
+- **Data Fetching:** The component fetches past events data from the `eventData` table in Supabase. It orders the data by date in descending order and filters out any events scheduled for a future date.
+- **Date and Time Formatting:** The component includes two utility functions, `formatDate` and `convertTo12HourTime`, for formatting date and time values.
+- **Display Logic:** The component has three primary states:
+   - **Fetching State:** Displayed while data is being fetched.
+   - **No Events State:** Displayed if there are no past events.
+   - **Events Display:** Displayed when there are past events.
+
+## Styling
+
+- The component employs Tailwind CSS for styling, making use of utility classes for layout, spacing, and typography.
+- The `@nextui-org/react` library is used for displaying a loading spinner (`Progress` component) during the fetching state.
+
+## Accessibility
+
+- The component contains appropriate ARIA roles and attributes, such as `aria-label`, to ensure the loading state is accessible.
+
+## Dependencies
+
+- **Supabase:** Utilized for fetching past events data from the database.
+- **React Hooks (`useState`, `useEffect`):** Utilized for managing local state and side effects.
+- **`@nextui-org/react` library:** Utilized for the loading spinner (`Progress` component).
+- **`EventCard` component:** A custom component used for rendering each event's details.
